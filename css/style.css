@@ -82,7 +82,7 @@ li a
 /* On stylise l’image principal du haut de la page. */
 #imgHeader
 {
-    background-image: url('/img/architect.jpg');
+    background-image: url('../img/architect.jpg');
 
     height: 37.5rem;
 
