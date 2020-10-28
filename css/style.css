@@ -1,0 +1,319 @@
+/* On désactive par défaut certains attributs CSS à toutes nos balises HTML. */
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 
+  On donne une police d'écriture à toute notre page html.  
+  Et on adoucit la descente de la page vers les sections.
+*/
+html
+{
+    scroll-behavior: smooth;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* On stylise notre navbar. */
+nav
+{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: .5rem 1.4rem;
+
+    /* On donne une position relative à notre navbar afin d'utiliser le z-index. */
+    position: fixed;
+    width: 100%;
+    background-color: white;
+
+    /* 
+      Cet attribut permet d'indiquer la profondeur où les éléments doivent être dessinés sur la page. La valeur par défaut est 0.      
+      1 me permet donc de dessiner l'élément navbar pardessus toutes les autres balises. 
+      Elle permet surtout de mettre en avant le box-shadow ci-dessous. 
+    */
+    z-index: 10;
+
+    /*
+      Cet attribut permet de dessiner un ombre porté sur les bords de la navbar suivant une direction. Pour cet exemple, vers le bas.
+    */
+    -webkit-box-shadow: 0 .2rem .2rem 0 #75757591;
+    box-shadow: 0 .2rem .2rem 0 #75757591;
+}
+
+/* 
+  On donne un margin précis à notre ul. Cela est surtout pour la version mobile. afin qu'elle ne touche pas le logo s'il doit passer en dessous
+  de celui-ci. 
+*/
+ul
+{
+    margin: 0.5rem 0;
+}
+
+/* Changement de la disposition de nos li. */
+li
+{
+    display: inline;
+}
+
+/* On enlève la décoration sur toutes nos balises a.*/
+a
+{
+    text-decoration: none;
+}
+
+/* On change la couleur de toutes nos balises a qui sont dans des balises li. */
+li a 
+{
+    color: black;
+}
+
+/* Cette Class permet d'indiquer que notre texte aura une épaisseur plus conséquente. */
+.bold
+{
+    font-weight: 600;
+}
+
+/* On stylise l’image principal du haut de la page. */
+#imgHeader
+{
+    background-image: url('/img/architect.jpg');
+
+    height: 37.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 .7rem;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* On donne une longeur à toutes nos balises image. */
+img
+{
+    width: 100%;
+}
+
+figure
+{
+    transition: .5s;
+}
+
+figure:hover
+{
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    z-index: 2;
+}
+
+#houses:hover figure:not(:hover) img
+{
+    filter: blur(2px) grayscale();
+}
+
+/* On donne une nouvelle épaisseur d'écriture à toutes nos balises hn. */
+h1, h2, h3, h4
+{
+    font-weight: normal;
+}
+
+/* On change la couleur de nos balises h1. */
+h1
+{
+    color: white;
+    transition: .5s;
+}
+
+h1:hover
+{
+    -moz-transform: translate(50px, 0px);
+    -webkit-transform: translate(50px, 0px);
+    -o-transform: translate(50px, 0px);
+    -ms-transform: translate(50px, 0px);
+    transform: translate(50px, 0px);
+
+    background-color: rosybrown;
+}
+
+/* On donne un padding à toutes notre Class p-1. */
+.p-1
+{
+    padding: .7rem;
+}
+
+/* On donne une couleur noire avec une petite transparence en d'arrière-fond à notre Class .bg-dark-a. */
+.bg-dark-a
+{
+    background-color: #000C;
+}
+
+/* On donne une couleur noire avec une petite transparence en d'arrière-fond à notre Class. */
+.bg-dark
+{
+    background-color: #000;
+    color: white;
+}
+
+/* On donne un petit padding gauche et droite à notre balise main. */
+main
+{
+    padding: 0 1.4rem;
+}
+
+/* Cette class permet d'ajouté un petit padding au dessus des éléments. */
+.mt-1
+{
+    margin-top: 1.4rem;
+}
+
+/* Cette class permet d'ajouté un plus grand padding au dessus des éléments. */
+.mt-2
+{
+    margin-top: 2.8rem;
+}
+
+/* Cette class permet d'ajouté un petit padding en dessous des éléments. */
+.mb-1
+{
+    margin-bottom: 1.4rem;
+}
+
+.mb-2
+{
+    margin-bottom: 3.5rem;
+}
+
+/* On stylise nos éléments houses et teams. */
+#houses, #teams
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media screen and (min-width: 1139px) and (max-width: 1504px)
+{
+    #teams
+    {
+        max-width: 50rem;
+        margin: auto;
+        margin-top: 2.8rem;
+    }
+}
+
+/* On stylise nos éléments figure et notre class .team. */
+figure, .team
+{
+    width: 22rem;
+    margin: 0 .4rem;
+}
+
+/* On donne un petit padding top et bottom a la class team. */
+.team
+{
+    padding: .7rem 0;
+}
+
+/* On indique à notre figure qu'elle doit-être relative. */
+figure, .team
+{
+    position: relative;
+}
+
+/* On indique à notre figcaption qu'il doit-être absolute afin de pouvoir précisé sont placement dans son parent figure. */
+figcaption
+{
+    position: absolute;
+    top: 0;
+}
+
+.team button{
+    position: absolute;
+    bottom: 0;
+}
+
+/* On indique à nos balises p qui ont un parent direct aux balises sections qu'ils doivent avoir un texte en format justifié.*/
+section > p
+{
+    text-align: justify; 
+}
+
+/*
+  On place un filtre noir et blanc sur les images.
+*/
+.team img
+{
+  filter: grayscale();
+}
+
+/* On donne une couleur et un padding à nos h4. */
+h4
+{
+    color: gray;
+    font-size: .8rem;
+    padding: 1rem 0;
+}
+
+/* On stylise tous nos boutons. */
+button
+{
+    width: 100%;
+    border: none;
+    padding: 0.7rem 0;
+}
+
+/* On change la disposition de nos formulaires. */
+form
+{
+    display: flex;
+    flex-direction: column;
+}
+
+/* On donnes des valeurs précises à nos inputs et textarea. */
+input, textarea
+{
+    padding: .5rem;
+    margin: 0.4rem 0;
+    height: 2.5rem;
+    font-size: 1rem;
+}
+
+/* On change légèrement la taille du texte du textarea et on empêche l'utilisateur de redimenssionner la balise. */
+textarea
+{
+    font-size: 1.3rem!important;
+    resize: none;
+}
+
+/* Cette Class permet d'indiqué a nos balises qu'ils doivent s'adapter à leurs contenus.*/
+.fit-content
+{
+    width: fit-content;
+}
+
+/* Permet de donner une hauteur a la GoogleMap. */
+#googleMap
+{
+    height:40rem;
+}
+
+/* Stylise le footeur. */
+footer
+{
+    height: 7rem;
+    text-align: center;
+    padding-top: 2rem;
+    color: white;
+    background-color: black;
+}
